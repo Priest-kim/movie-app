@@ -32,6 +32,10 @@ module.exports = {
         transformOptions: babelOptions(),
       },
     ],
-    ["@snowpack/plugin-dotenv"],
+    "@snowpack/plugin-dotenv",
+    "@snowpack/plugin-optimize",
   ],
+  alias: {
+    "~": "./src",
+  },
 };
