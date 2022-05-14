@@ -1,3 +1,11 @@
+const production = process.env.NODE_ENV === "production";
+
+function babelOptions() {
+  return {
+    plugins: production ? ["transform-remove-console"] : [],
+  };
+}
+
 module.exports = {
   mount: {
     public: "/",
@@ -14,16 +22,16 @@ module.exports = {
           postcss: {
             plugins: [require("autoprefixer")()],
           },
+          babel: babelOptions(),
         }),
       },
     ],
     [
       "@snowpack/plugin-babel",
       {
-        transformOptions: {
-          //   plugins: ["transform-remove-console"],
-        },
+        transformOptions: babelOptions(),
       },
     ],
+    ["@snowpack/plugin-dotenv"],
   ],
 };
