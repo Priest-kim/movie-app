@@ -1,14 +1,10 @@
 <script>
     import Router from "svelte-spa-router";
     import Header from "~/components/Header.svelte"
-    import Home from "~/routes/Home.svelte";
-    import About from "~/routes/About.svelte";
+    import routes from '~/routes'
 </script>
 
 <Header/>
-<Router routes={{
-    '/': Home,
-    '/about' : About
-}}/>
+<Router {routes}/>
 
 <style lang="scss"></style>
