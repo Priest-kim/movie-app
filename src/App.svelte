@@ -1,9 +1,10 @@
 <script>
-    import Router from "svelte-spa-router";
-    import Header from "~/components/Header.svelte"
-    import routes from '~/routes'
+  import Router from "svelte-spa-router";
+  import Header from "~/components/Header.svelte";
+  import Footer from "~/components/Footer.svelte";
+  import routes from "~/routes";
 </script>
 
-<Header/>
-<Router {routes}/>
-
+<Header />
+<Router routes="{routes}" />
+<Footer />

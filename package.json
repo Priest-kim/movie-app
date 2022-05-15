@@ -22,6 +22,7 @@
     "@snowpack/plugin-svelte": "^3.7.0",
     "autoprefixer": "^10.4.7",
     "babel-plugin-transform-remove-console": "^6.9.4",
+    "lodash": "^4.17.21",
     "postcss": "^8.4.13",
     "prettier-plugin-svelte": "^2.7.0",
     "snowpack": "^3.8.8",
