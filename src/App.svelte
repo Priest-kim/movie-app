@@ -7,4 +7,3 @@
 <Header/>
 <Router {routes}/>
 
-<style lang="scss"></style>
