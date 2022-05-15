@@ -1,0 +1,23 @@
+{
+  "imports": {
+    "/index.html": {
+      "entry": [
+        "/_dist_/main.js"
+      ],
+      "css": [
+        "/favicon.png"
+      ],
+      "js": [
+        "/_dist_/App.svelte.js",
+        "/_dist_/components/Header.svelte.js",
+        "/_dist_/main.js",
+        "/_dist_/routes/About.svelte.js",
+        "/_dist_/routes/Home.svelte.js",
+        "/_snowpack/pkg/common/index-426d498a.js",
+        "/_snowpack/pkg/svelte-spa-router.js",
+        "/_snowpack/pkg/svelte/internal.js"
+      ]
+    }
+  },
+  "generated": {}
+}

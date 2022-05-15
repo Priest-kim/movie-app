@@ -1,0 +1,6 @@
+{
+  "imports": {
+    "svelte-spa-router": "./svelte-spa-router.js",
+    "svelte/internal": "./svelte/internal.js"
+  }
+}
