@@ -21,6 +21,7 @@
     "@snowpack/plugin-sass": "^1.4.0",
     "@snowpack/plugin-svelte": "^3.7.0",
     "autoprefixer": "^10.4.7",
+    "axios": "^0.27.2",
     "babel-plugin-transform-remove-console": "^6.9.4",
     "lodash": "^4.17.21",
     "postcss": "^8.4.13",

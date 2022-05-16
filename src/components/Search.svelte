@@ -129,7 +129,6 @@
       {/each}
     </select>
   </div>
-
   <div class="select">
     <select bind:value="{number}">
       {#each numbers as n (n)}
@@ -137,6 +136,5 @@
       {/each}
     </select>
   </div>
-
   <button class="btn" on:click="{apply}">Apply</button>
 </div>
