@@ -1,5 +1,6 @@
 import axios from "axios";
 import { writable, get } from "svelte/store";
+import _unionBy from "lodash/unionBy";
 
 export const movies = writable([]);
 
@@ -15,7 +16,7 @@ export const searchMovies = async (payload) => {
 
   movies.set(Search);
 
-  const pageLength = Math.ceil(totalResults / number);
+  const pageLength = Math.ceil(totalResults / 10);
 
   if (pageLength > 1) {
     for (let page = 2; page <= pageLength; page++) {
@@ -24,10 +25,9 @@ export const searchMovies = async (payload) => {
         `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&s=${title}&type=${type}&y=${year}&page=${page}`
       );
       const { Search } = res.data;
-      movies.update(($movies) => {
-        $movies.push(...Search);
-        return $movies;
-      });
+      movies.update(($movies) => _unionBy($movies, Search, "imdbID"));
     }
   }
+
+  console.log(get(movies));
 };
