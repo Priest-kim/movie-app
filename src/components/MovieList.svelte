@@ -1,6 +1,6 @@
 <script>
   import { movies } from "~/store/movie";
-  import MovieCard from "~/MovieCard.svelte";
+  import MovieCard from "~/components/MovieCard.svelte";
 </script>
 
 <div class="movie-list">
