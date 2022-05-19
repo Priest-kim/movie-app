@@ -4,6 +4,7 @@ import _unionBy from "lodash/unionBy";
 
 export const movies = writable([]);
 export const loading = writable(false);
+export const theMovie = writable({});
 
 export const searchMovies = async (payload) => {
   if (get(loading)) return;
@@ -32,6 +33,20 @@ export const searchMovies = async (payload) => {
       movies.update(($movies) => _unionBy($movies, Search, "imdbID"));
     }
   }
+
+  loading.set(false);
+};
+
+export const seachMovieWithId = async (id) => {
+  if (get(loading)) return;
+  loading.set(true);
+
+  //
+  const OMDB_API_KEY = "7035c60c";
+  const res = await axios.get(
+    `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&i=${id}&plot=full`
+  );
+  theMovie.set(res);
 
   loading.set(false);
 };

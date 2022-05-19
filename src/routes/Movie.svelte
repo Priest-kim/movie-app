@@ -1,6 +1,9 @@
 <script>
   import Loader from "~/components/Loader.svelte";
+  import { seachMovieWithId } from "~/store/movie";
   export let params = {};
+
+  seachMovieWithId(params.id);
 </script>
 
 <style lang="scss">
