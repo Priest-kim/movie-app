@@ -46,7 +46,7 @@ export const seachMovieWithId = async (id) => {
   const res = await axios.get(
     `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&i=${id}&plot=full`
   );
-  theMovie.set(res);
+  theMovie.set(res.data);
 
   loading.set(false);
 };
