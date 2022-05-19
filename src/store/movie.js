@@ -3,8 +3,12 @@ import { writable, get } from "svelte/store";
 import _unionBy from "lodash/unionBy";
 
 export const movies = writable([]);
+export const loading = writable(false);
 
 export const searchMovies = async (payload) => {
+  if (get(loading)) return;
+  loading.set(true);
+
   const { title, type, year, number } = payload;
   const OMDB_API_KEY = "7035c60c";
 
@@ -29,5 +33,5 @@ export const searchMovies = async (payload) => {
     }
   }
 
-  console.log(get(movies));
+  loading.set(false);
 };

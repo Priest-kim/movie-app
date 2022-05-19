@@ -1,6 +1,7 @@
 <script>
-  import { movies } from "~/store/movie";
+  import { movies, loading } from "~/store/movie";
   import MovieCard from "~/components/MovieCard.svelte";
+  import Loader from "~/components/Loader.svelte";
 </script>
 
 <style lang="scss">
@@ -19,6 +20,9 @@
 </style>
 
 <div class="movie-list">
+  {#if $loading}
+    <Loader />
+  {/if}
   <div class="movies">
     {#each $movies as movie (movie.imdbID)}
       <MovieCard movie="{movie}" />
