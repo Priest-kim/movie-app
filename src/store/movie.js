@@ -53,6 +53,7 @@ export const seachMovieWithId = async (id) => {
   const res = await _fetchMovie({ id });
   theMovie.set(res.data);
 
+
   loading.set(false);
 };
 
