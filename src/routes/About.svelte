@@ -1,8 +1,15 @@
 <script>
-    import { querystring} from "svelte-spa-router";
-
-    
+    import { querystring } from "svelte-spa-router";
+    import qs from "qs"
+    $: query = qs.parse($querystring);
+    $: name = query.name || "Netlify";
+    $: email = query.email || "hyunbin.kim.3376@gmail.com";
+    $: image = query.image || "/assets/svelte.png";
+    $: phone = query.phone || "+82-10-1234-1234";
+    $: blog = query.blog || "notion";
 </script>
+
+
 
 <div class="user-profile">
     <div class="photos">
@@ -10,16 +17,14 @@
             <img src="/assets/svelte.png" alt="User"/>
         </div>
         <div class="photo">
-            <img src="/assets/svelte.png" alt="USer"/>
+            <img src={image} alt="USer"/>
         </div>
     </div>
     <div class="details">
-        <div class="name">
-            Jaden
-        </div>
-        <div class="email">hyunbin.kim.3376@gmail.com</div>
-        <div class="blog">Notion</div>
-        <div class="phone">+82 010-1234-1234</div>
+        <div class="name"> {name}</div>
+        <div class="email">{email}</div>
+        <div class="blog">{blog}</div>
+        <div class="phone">{phone}</div>
     </div>
 </div>
 
