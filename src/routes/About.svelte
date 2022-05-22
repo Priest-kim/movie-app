@@ -2,7 +2,7 @@
     import { querystring } from "svelte-spa-router";
     import qs from "qs"
     $: query = qs.parse($querystring);
-    $: name = query.name || "Netlify";
+    $: name = query.name || "Jaden";
     $: email = query.email || "hyunbin.kim.3376@gmail.com";
     $: image = query.image || "/assets/svelte.png";
     $: phone = query.phone || "+82-10-1234-1234";
