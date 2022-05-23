@@ -9,6 +9,12 @@
         text-align: center;
         font-family: "Oswald", "sans-serif";
         padding: 80px, 20px;
-        
+        .status {
+            color: $color--primary;
+            font-size: 160px;
+        }
+        .status-text {
+            font-size: 50px;
+        }
     }
 </style>
