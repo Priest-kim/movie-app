@@ -22,6 +22,7 @@ export const searchMovies = async (payload) => {
     const { Search, totalResults } = res.data;
     movies.set(Search);
     total = totalResults;
+
   } catch (msg) {
     movies.set([]);
     message.set(msg);
@@ -65,19 +66,19 @@ const _fetchMovie = (payLoad) => {
     ? `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&i=${id}&plot=full`
     : `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&s=${title}&type=${type}&y=${year}&page=${page}`;
 
-  return new Promise(async (resolve, reject) => {
+  return new Promise(async (res, rej) => {
     try {
-      const res = await axios.get(url);
-      console.log(res.data);
+      const response = await axios.get(url);
+      console.log(response.data);
 
-      if (res.data.Error) {
-        reject(res.data.Error);
+      if (response.data.Error) {
+        rej(res.data.Error);
       }
 
-      resolve(res);
+      res(response);
     } catch (e) {
       console.log(e.response.status);
-      reject(e.msaage);
+      rej(e.msaage);
     }
   });
 };

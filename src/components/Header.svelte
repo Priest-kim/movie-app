@@ -95,7 +95,6 @@
   </nav>
   <div 
     on:click={(e) =>{
-        console.log(e)
         push('/about?name=Netlify&email=hello@netlify.com&image=%2Fassets%2Fnetlify.png')}}
         class="user"
   >

@@ -2,11 +2,11 @@
   import { querystring } from "svelte-spa-router";
   import qs from "qs";
   $: query = qs.parse($querystring);
-  $: name = query.name || "Netlify";
+  $: name = query.name || "Heropy";
   $: email = query.email || "hyunbin.kim.3376@gmail.com";
-  $: image = query.image || "/assets/svelte.png";
+  $: image = query.image || "https://heropy.blog/css/images/logo.png";
   $: phone = query.phone || "+82-10-1234-1234";
-  $: blog = query.blog || "notion";
+  $: blog = query.blog || "https://heropy.blog";
 
 </script>
 
@@ -53,7 +53,7 @@
       <img src="/assets/svelte.png" alt="User" />
     </div>
     <div class="photo">
-      <img src="{image}" alt="User" />
+      <img src={image} alt="User" />
     </div>
   </div>
   <div class="details">
